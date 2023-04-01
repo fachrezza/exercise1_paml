@@ -1,3 +1,4 @@
+import 'package:exercise1_paml/login.page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -35,12 +36,22 @@ class WelcomePage extends StatelessWidget {
             height: 110,
           ),
           Image(
-            image: AssetImage("image/pokeball2.png"),
+            image: AssetImage("images/pokeball2.png"),
             height: 144,
             width: double.infinity,
             alignment: Alignment.bottomCenter,
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.arrow_right_alt),
+        backgroundColor: Colors.amber,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LoginPage()),
+          );
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
