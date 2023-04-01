@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(
                     labelText: "Name",
                     hintText: "Enter your name",
-                    border: OutlineInputBorder(),
+                    border: UnderlineInputBorder(),
                     prefixIcon: Icon(Icons.person),
                   ),
                   validator: (value) {
@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(
                     labelText: "Password",
                     hintText: "Enter your password",
-                    border: OutlineInputBorder(),
+                    border: UnderlineInputBorder(),
                     prefixIcon: Icon(Icons.lock),
                     suffix: InkWell(
                       onTap: () {

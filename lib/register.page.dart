@@ -1,3 +1,4 @@
+import 'package:exercise1_paml/login.page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:exercise1_paml/dashboard.page.dart';
@@ -34,6 +35,22 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Container(
+                  height: 110,
+                  padding: EdgeInsets.all(0),
+                  child: Row(children: [
+                    FloatingActionButton(
+                      child: Icon(Icons.arrow_back),
+                      backgroundColor: Colors.amber,
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()));
+                      },
+                    )
+                  ]),
+                ),
                 CircleAvatar(
                   backgroundImage: AssetImage("images/pikacu.jpg"),
                   radius: 60,
@@ -59,7 +76,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     decoration: const InputDecoration(
                       labelText: "Name",
                       prefixIcon: Icon(Icons.person),
-                      border: OutlineInputBorder(),
+                      border: UnderlineInputBorder(),
                       hintText: "Enter your name",
                     ),
                     validator: (value) {
@@ -82,7 +99,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     decoration: const InputDecoration(
                       labelText: "Email",
                       prefixIcon: Icon(Icons.email),
-                      border: OutlineInputBorder(),
+                      border: UnderlineInputBorder(),
                       hintText: "Enter your email",
                     ),
                     validator: (value) {
@@ -106,7 +123,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     obscuringCharacter: "*",
                     decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.lock),
-                      border: OutlineInputBorder(),
+                      border: UnderlineInputBorder(),
                       labelText: "Password",
                       hintText: "Enter your password",
                     ),
@@ -130,7 +147,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     obscuringCharacter: "*",
                     decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.lock),
-                      border: OutlineInputBorder(),
+                      border: UnderlineInputBorder(),
                       labelText: "Re-Password",
                       hintText: "Re-Enter your password",
                     ),
@@ -150,6 +167,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   padding: const EdgeInsets.symmetric(vertical: 32.0),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.amber,
                       padding: const EdgeInsets.symmetric(vertical: 10),
                     ),
                     onPressed: () {
@@ -169,6 +187,9 @@ class _RegisterPageState extends State<RegisterPage> {
                       width: double.infinity,
                       height: 40,
                       child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.amber,
+                        ),
                         child: Text("Register"),
                         onPressed: () {},
                       ),
