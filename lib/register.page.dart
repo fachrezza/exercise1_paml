@@ -157,7 +157,10 @@ class _RegisterPageState extends State<RegisterPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DashboardPage(),
+                            builder: (context) => DashboardPage(User(
+                                _usernameController.text,
+                                _emailController.text,
+                                _passwordController.text)),
                           ),
                         );
                       }
